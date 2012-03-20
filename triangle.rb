@@ -19,7 +19,7 @@ def triangle(a, b, c)
     raise TriangleError, "A triangle cannot have a zero length side -- that's a line"
   end
   if ((a+b<=c) || (b+c<=a) || (a+c<=b))
-      raise TriangleError, "The sum of two sides cannot be less than the third side"
+    raise TriangleError, "The sum of two sides cannot be less than the third side"
   end
   if (a == b && a == c)
     return :equilateral
@@ -30,7 +30,6 @@ def triangle(a, b, c)
   if (a != b && a != c && b != c)
     return :scalene
   end
-  
 end
 
 # Error class used in part 2.  No need to change this code.
