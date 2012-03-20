@@ -15,13 +15,22 @@
 #
 def triangle(a, b, c)
   # WRITE THIS CODE
-  if ((a == b) && (a == c) && (b == c))
+  if (a <= 0 || b <= 0 || c <= 0)
+    raise TriangleError, "A triangle cannot have a zero length side -- that's a line"
+  end
+  if ((a+b<=c) || (b+c<=a) || (a+c<=b))
+      raise TriangleError, "The sum of two sides cannot be less than the third side"
+  end
+  if (a == b && a == c)
     return :equilateral
-  elsif ((a == b) || (a == c) || (b == c))
+  end
+  if ((a == b) || (a == c) || (b == c))
     return :isosceles
-  else
+  end
+  if (a != b && a != c && b != c)
     return :scalene
   end
+  
 end
 
 # Error class used in part 2.  No need to change this code.
